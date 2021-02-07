@@ -31,6 +31,11 @@ namespace Business.Concrete
             return _managerDao.GetAll();
         }
 
+        public List<Manager> GetByCode(string managerCode)
+        {
+            return _managerDao.GetByCode(managerCode);
+        }
+
         public Manager GetById(int id)
         {
          return _managerDao.Get(manager => manager.ManagerId == id);

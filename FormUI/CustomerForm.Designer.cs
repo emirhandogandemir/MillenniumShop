@@ -46,7 +46,7 @@ namespace FormUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(77)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(750, 415);
             this.Controls.Add(this.labelCustomerEnter);
             this.Name = "CustomerForm";

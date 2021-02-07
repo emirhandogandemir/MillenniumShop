@@ -16,6 +16,7 @@ namespace Entities.Concrete
         public string ManagerPassword { get; set; }
         public string ManagerPassword2 { get; set; }
         public string ManagerCity { get; set; }
+        public string ManagerCode { get; set; }
 
     }
 }

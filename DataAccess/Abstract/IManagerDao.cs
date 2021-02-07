@@ -7,7 +7,7 @@ using Entities.Concrete;
 namespace DataAccess.Abtsract
 {
    public interface IManagerDao : IEntityRepository<Manager>
-    {
-
-    }
+   {
+       List<Manager> GetByCode(string managerCode);
+   }
 }
