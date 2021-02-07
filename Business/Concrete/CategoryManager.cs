@@ -7,7 +7,7 @@ using Entities.Concrete;
 
 namespace Business.Concrete
 {
-    public class CategoryManager : IEntityService<Category>
+    public class CategoryManager : ICategoryService
     {
         private ICategoryDao _categoryDao;
 

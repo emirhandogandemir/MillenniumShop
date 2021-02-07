@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{C1CA1DDA-76D7-4373-BC06-0A9C8EA754DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{C1CA1DDA-76D7-4373-BC06-0A9C8EA754DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{A201C8FC-7C71-4B5E-8A50-CB306ECB0E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{A201C8FC-7C71-4B5E-8A50-CB306ECB0E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{BF272E45-3BBA-45BD-8440-CBC86DAADF48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{BF272E45-3BBA-45BD-8440-CBC86DAADF48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormUI", "FormUI\FormUI.csproj", "{ECE58632-21D6-4454-B9AB-764A111E22E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{021C182E-A47A-42B8-BF96-C4DC8887D690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ECE58632-21D6-4454-B9AB-764A111E22E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECE58632-21D6-4454-B9AB-764A111E22E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECE58632-21D6-4454-B9AB-764A111E22E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{021C182E-A47A-42B8-BF96-C4DC8887D690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{021C182E-A47A-42B8-BF96-C4DC8887D690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{021C182E-A47A-42B8-BF96-C4DC8887D690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{021C182E-A47A-42B8-BF96-C4DC8887D690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,10 +14,10 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer(@"Server=EMIRHANDGNDMR;Database=MillenniumShop; Trusted_Connection = true");
         }
 
-        private DbSet<Manager> Managers { get; set; }
-        private DbSet<Product> Products { get; set; }
-        private DbSet<Category> Categories { get; set; }
-        private DbSet<Customer> Customers { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
 
     }

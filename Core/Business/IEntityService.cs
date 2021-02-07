@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Entities.Abstract;
 
-namespace Business.Abstract
+
+namespace Core.Business
 {
    public interface IEntityService <T> where T: class , IEntity,new()
    {
