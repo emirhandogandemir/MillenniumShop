@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace FormUI
 {
-    public partial class CustomerForm : Form
+    public partial class CustomerForm : MetroFramework.Forms.MetroForm
     {
         public CustomerForm()
         {
             InitializeComponent();
+        }
+
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+            MetroManager.Theme = MetroFramework.MetroThemeStyle.Dark;
+
         }
     }
 }

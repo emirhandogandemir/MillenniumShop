@@ -29,35 +29,31 @@ namespace FormUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelCustomerEnter = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.MetroManager = new MetroFramework.Components.MetroStyleManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.MetroManager)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelCustomerEnter
+            // MetroManager
             // 
-            this.labelCustomerEnter.AutoSize = true;
-            this.labelCustomerEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelCustomerEnter.Location = new System.Drawing.Point(238, 19);
-            this.labelCustomerEnter.Name = "labelCustomerEnter";
-            this.labelCustomerEnter.Size = new System.Drawing.Size(208, 31);
-            this.labelCustomerEnter.TabIndex = 0;
-            this.labelCustomerEnter.Text = "Customer Panel";
+            this.MetroManager.Owner = null;
+            this.MetroManager.Style = MetroFramework.MetroColorStyle.Green;
+            this.MetroManager.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(77)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(750, 415);
-            this.Controls.Add(this.labelCustomerEnter);
             this.Name = "CustomerForm";
-            this.Text = "CustomerForm";
+            this.Text = "Customer Panel";
+            this.Load += new System.EventHandler(this.CustomerForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.MetroManager)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelCustomerEnter;
+        private MetroFramework.Components.MetroStyleManager MetroManager;
     }
 }

@@ -25,108 +25,101 @@ namespace FormUI
 
         private void FormSignUp_Load(object sender, EventArgs e)
         {
-            var materialSkinManager = MaterialSkinManager.Instance;
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
+            
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, 
                 Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+
+
         }
 
         CustomerManager customerManager = new CustomerManager(new EfCustomerDao());
         ManagerManager managerManager = new ManagerManager(new EfManagerDao());
-        private void btnAdd_Click(object sender, EventArgs e)
+
+       
+
+        private void tabControlManagerSıgnIn_Click(object sender, EventArgs e)
         {
-            if (CodeControl())
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCustomerAdd_Click(object sender, EventArgs e)
+        {
+            if (txtCustomerPassword.Text == txtCustomerAgainPassword.Text)
             {
-                if (PasswordControl())
+                MessageBox.Show("Sisteme kayıtınız başarı ile gerçekleştirilmiştir");
+                customerManager.Add(new Customer
                 {
-                    MessageBox.Show("manager tablosuna eklendi");
-                    managerManager.Add(addClickManager());
-                   
-                }
-                else
-                {
-                    MessageBox.Show("parolalar eşleşmedi");
-                }
+                    CustomerName = txtCustomerName.Text,
+                    CustomerSurname = txtCustomerSurname.Text,
+                    CustomerCity = txtCustomerCity.Text,
+                    CustomerEmail = txtCustomerEmail.Text,
+                    CustomerPassword = txtCustomerPassword.Text,
+                    CustomerPassword2 = txtCustomerAgainPassword.Text
+                });
+                
             }
             else
             {
-                if (PasswordControl())
-                {
-                    MessageBox.Show("customer tablosuna eklendi");
-                    customerManager.Add(AddClickCustomer());
-                  
-                }
-                else
-                {
-                    MessageBox.Show("parolalar eşleşmedi");
-                }
+                MessageBox.Show("Parolalar Eşleşemedi");
             }
         }
 
-        private bool CodeControl()
+        private void txtCustomerEmail_TextChanged(object sender, EventArgs e)
         {
-            if (txtCode.Text == ".millennium")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        private bool PasswordControl()
-        {
-            if (txtPassword.Text == txtPassword2.Text)
-            {
-                return true;
-            }
-            else
-            {
-
-                return false;
-            }
 
         }
 
-        
-     
-
-        private Manager addClickManager()
-        {
-            Manager manager = new Manager
-            {
-                ManagerName = txtName.Text,
-                ManagerSurname = txtSurname.Text,
-                ManagerCity = txtCity.Text,
-                ManagerEMail = txtEmail.Text,
-                ManagerPassword = txtPassword.Text,
-                ManagerPassword2 = txtPassword2.Text,
-                ManagerCode = txtCode.Text
-            };
-            return manager;
-        }
-        private Customer AddClickCustomer()
-        {
-            Customer customer =  new Customer
-            {
-               CustomerName = txtName.Text,
-            CustomerSurname = txtSurname.Text,
-            CustomerEmail = txtEmail.Text,
-            CustomerPassword  =  txtPassword.Text,
-            CustomerPassword2 = txtPassword2.Text,
-            CustomerCity = txtCity.Text
-            
-            };
-            return customer;
-        }
-
-        private void btnClear_Click_1(object sender, EventArgs e)
+        private void btnCustomerClear_Click(object sender, EventArgs e)
         {
             foreach (Control item in this.Controls)
             {
-                if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
+                if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = " ";
             }
         }
+
+        private void btnManagerAdd_Click(object sender, EventArgs e)
+        {
+            if (txtManagerCode.Text == ".millennium")
+            {
+                if (txtManagerPassword.Text == txtManagerAgainPassword.Text)
+                {
+                    MessageBox.Show("sisteme kayıtınız başarı ile gerçekleştirilmiştir");
+                    managerManager.Add(new Manager
+                    {
+                        ManagerName = txtManagerName.Text,
+                        ManagerSurname = txtManagerSurname.Text,
+                        ManagerEMail = txtManagerEmail.Text,
+                        ManagerCity = txtManagerCity.Text,
+                        ManagerPassword = txtManagerPassword.Text,
+                        ManagerPassword2 = txtManagerAgainPassword.Text,
+                        ManagerCode = txtManagerCode.Text
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("PASSWORDLER UYUŞMUYOR");
+                }
+            }
+            else
+            {
+                MessageBox.Show("girdiginiz kod erişim izni vermiyor");
+            }
+            
+          
+        }
     }
+
+ 
 }
+
+
+

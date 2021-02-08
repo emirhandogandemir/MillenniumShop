@@ -22,6 +22,7 @@ namespace FormUI
         public Base()
         {
             InitializeComponent();
+
         }
 
         private IPersonCheckService<Manager> managerCheckService = new ManagerCheckService(new EfManagerDao());
