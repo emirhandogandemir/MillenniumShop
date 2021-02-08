@@ -27,9 +27,9 @@ namespace FormUI
         {
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            
+
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, 
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900,
                 Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
 
@@ -39,7 +39,7 @@ namespace FormUI
         CustomerManager customerManager = new CustomerManager(new EfCustomerDao());
         ManagerManager managerManager = new ManagerManager(new EfManagerDao());
 
-       
+
 
         private void tabControlManagerSıgnIn_Click(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace FormUI
                     CustomerPassword = txtCustomerPassword.Text,
                     CustomerPassword2 = txtCustomerAgainPassword.Text
                 });
-                
+
             }
             else
             {
@@ -80,10 +80,17 @@ namespace FormUI
 
         private void btnCustomerClear_Click(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
-            }
+
+            // foreach (Control item in this.Controls) { if (item is TextBox) { TextBox tbox = (TextBox)item; tbox.Clear(); } }
+
+
+           // foreach (Control c in this.Controls) { if (c is TextBox) { ((TextBox)c).Clear(); } if (c.Controls.Count > 0) { ClearAll(c); } }
+
+
+
+
+
+
         }
 
         private void btnManagerAdd_Click(object sender, EventArgs e)
@@ -113,8 +120,8 @@ namespace FormUI
             {
                 MessageBox.Show("girdiginiz kod erişim izni vermiyor");
             }
-            
-          
+
+
         }
 
         private void btnManagerClear_Click(object sender, EventArgs e)
@@ -123,7 +130,7 @@ namespace FormUI
         }
     }
 
- 
+
 }
 
 
