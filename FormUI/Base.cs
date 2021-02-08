@@ -83,7 +83,7 @@ namespace FormUI
 
             if (customerCheckService.CheckIfRealPerson(customer))
             {
-                MessageBox.Show("dogru");
+                MessageBox.Show("Giris basarılı "+customer.CustomerName+customer.CustomerSurname);
                 CustomerForm customerForm = new CustomerForm();
                 this.Visible = false;
                 customerForm.ShowDialog();
@@ -93,6 +93,11 @@ namespace FormUI
             {
                 MessageBox.Show("yanlıs");
             }
+        }
+
+        private void Base_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

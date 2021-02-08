@@ -36,6 +36,11 @@ namespace Business.Concrete
             return _productDao.GetAll(product=>product.CategoryId==category.CategoryId);
         }
 
+        public List<Product> GetAllByCategoryId(int categoryId)
+        {
+            return _productDao.GetAll(p => p.CategoryId == categoryId);
+        }
+
         public Product GetById(int id)
         {
             return _productDao.Get(p  =>  p.ProductId  ==  id);

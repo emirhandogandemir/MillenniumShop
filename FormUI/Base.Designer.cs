@@ -155,6 +155,7 @@ namespace FormUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Base";
             this.Text = "Base";
+            this.Load += new System.EventHandler(this.Base_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

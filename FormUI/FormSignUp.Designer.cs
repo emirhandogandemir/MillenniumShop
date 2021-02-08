@@ -346,6 +346,7 @@ namespace FormUI
             this.btnManagerClear.TabIndex = 22;
             this.btnManagerClear.Text = "CLEAR";
             this.btnManagerClear.UseVisualStyleBackColor = true;
+            this.btnManagerClear.Click += new System.EventHandler(this.btnManagerClear_Click);
             // 
             // txtManagerAgainPassword
             // 

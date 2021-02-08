@@ -82,7 +82,7 @@ namespace FormUI
         {
             foreach (Control item in this.Controls)
             {
-                if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = " ";
+                if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
             }
         }
 
@@ -115,6 +115,11 @@ namespace FormUI
             }
             
           
+        }
+
+        private void btnManagerClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
