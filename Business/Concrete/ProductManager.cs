@@ -4,6 +4,8 @@ using System.Text;
 using Business.Abstract;
 using DataAccess.Abtsract;
 using Entities.Concrete;
+using Entities.DTOs;
+
 namespace Business.Concrete
 {
    public class ProductManager : IProductService
@@ -49,6 +51,16 @@ namespace Business.Concrete
         public List<Product> GetByUnitPrice(decimal min, decimal max)
         {
             return _productDao.GetAll(p => p.UnitPrice>=min && p.UnitPrice<=max);
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            return _productDao.GetProductDetails();
+        }
+
+        public List<ProductNameAndUnitsInStock> GetUnitsInStockProductName()
+        {
+            return _productDao.GetUnitsInStockProductName();
         }
 
         public void Update(Product entity)

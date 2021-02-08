@@ -22,6 +22,7 @@ namespace DataAccess.Concrete.EntityFramework.Repository
                         on p.CategoryId equals c.CategoryId
                     select new ProductDetailDto
                     {
+                        ProductId = p.ProductId,
                         ProductName = p.ProductName,
                         CategoryName = c.CategoryName,
                         UnitPrice = p.UnitPrice,
@@ -30,5 +31,21 @@ namespace DataAccess.Concrete.EntityFramework.Repository
                 return result.ToList();
             }
         }
+
+        public List<ProductNameAndUnitsInStock> GetUnitsInStockProductName()
+        {
+            using (MillenniumShopContext context = new MillenniumShopContext())
+            {
+                var result = from p in context.Products
+                    select new ProductNameAndUnitsInStock
+                    {
+                        ProductName = p.ProductName,
+                        UnitsInStock = p.UnitsInStock
+                    };
+                return result.ToList();
+            }
+        }
+        //sor
+
     }
 }

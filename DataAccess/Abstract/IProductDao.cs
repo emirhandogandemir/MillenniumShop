@@ -10,5 +10,6 @@ namespace DataAccess.Abtsract
    public interface IProductDao : IEntityRepository<Product>
    {
        List<ProductDetailDto> GetProductDetails();
+       List<ProductNameAndUnitsInStock> GetUnitsInStockProductName();
    }
 }
