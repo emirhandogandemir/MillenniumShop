@@ -85,8 +85,11 @@ namespace FormUI
         {
             productManager.Update(new Product
             {
-                ProductId = Convert.ToInt32(txtAdminPanelProductUpdateProductId),
-                CategoryId = Convert.ToInt32(txtAdminPanelProductUpdateCategoryId.Text)
+                ProductId = Convert.ToInt32(txtAdminPanelProductUpdateProductId.Text),
+                ProductName = txtAdminPanelProductUpdateProductName.Text,
+                CategoryId = Convert.ToInt32(txtAdminPanelProductUpdateCategoryId.Text),
+                UnitPrice = Convert.ToDecimal(txtAdminPanelProductUpdateUnitPrice.Text),
+                UnitsInStock = Convert.ToInt16(txtAdminPanelProductUpdateUnitsInStock.Text)
             });
             
             MessageBox.Show("Product Updated");
