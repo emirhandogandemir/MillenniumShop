@@ -1,5 +1,6 @@
 # MillenniumShop
-Burada size bir windows form arayüzü kullanarak geliştirdiğimiz 5 Katmanlı Mimariye sahip bir proje sunduk
+Burada size bir windows form arayüzü kullanarak geliştirdiğimiz 5 Katmanlı Mimariye sahip bir proje sunduk , bunu sunarken Sql Server , T-sql , Entity Framework Core ,Code First 
+yapısı , LinQ yu temel bir şekilde kullanmayı hedefledik 
 
 
 Oluşturduğum Katman Yapısı Bu şekilde
