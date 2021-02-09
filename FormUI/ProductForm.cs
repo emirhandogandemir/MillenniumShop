@@ -50,7 +50,7 @@ namespace FormUI
 
         private void metroButtonProductFormLoad_Click(object sender, EventArgs e)
         {
-            dataGridViewProduct.DataSource = productManager.GetById(2);
+            dataGridViewProduct.DataSource = productManager.GetAll();
         }
     }
 }

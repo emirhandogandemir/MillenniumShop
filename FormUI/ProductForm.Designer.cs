@@ -73,11 +73,11 @@ namespace FormUI
             // 
             // metroButtonProductFormLoad
             // 
-            this.metroButtonProductFormLoad.Location = new System.Drawing.Point(671, 291);
+            this.metroButtonProductFormLoad.Location = new System.Drawing.Point(676, 298);
             this.metroButtonProductFormLoad.Name = "metroButtonProductFormLoad";
             this.metroButtonProductFormLoad.Size = new System.Drawing.Size(75, 23);
             this.metroButtonProductFormLoad.TabIndex = 1;
-            this.metroButtonProductFormLoad.Text = "Load";
+            this.metroButtonProductFormLoad.Text = "All Products";
             this.metroButtonProductFormLoad.Click += new System.EventHandler(this.metroButtonProductFormLoad_Click);
             // 
             // ProductForm

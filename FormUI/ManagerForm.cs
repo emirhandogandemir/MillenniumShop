@@ -39,7 +39,7 @@ namespace FormUI
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
             productManager.Add(AddProductClick());
-            lblMessageAdded.Text = "Ürün eklendi";
+            MessageBox.Show("ürün veritabanını eklendi");
         }
 
         public Product AddProductClick()
@@ -62,6 +62,45 @@ namespace FormUI
         private void btnAdminPanelUnitsInStockShow_Click(object sender, EventArgs e)
         {
             dataGridViewUnitsInStock.DataSource = productManager.GetUnitsInStockProductName();
+        }
+
+        private void btnAdminPanelProductDelete_Click(object sender, EventArgs e)
+        {
+            productManager.Delete(new Product
+            {
+                ProductId =Convert.ToInt32(txtBoxAdminPanelProductDelete.Text)
+            });
+            MessageBox.Show("ürün veritabanından silindi");
+        }
+
+        private void lblAdminPanelProductAddClear_Click(object sender, EventArgs e)
+        {
+            txtProductAddProductName.Text = "";
+            txtProductAddUnitPrice.Text = "";
+            txtProductAddCategoryId.Text = "";
+            txtProductAddUnitsInStock.Text = "";
+        }
+
+        private void btnAdminPanelProductUpdateUpdate_Click(object sender, EventArgs e)
+        {
+            productManager.Update(new Product
+            {
+                ProductId = Convert.ToInt32(txtAdminPanelProductUpdateProductId),
+                ProductName = txtAdminPanelProductUpdateProductName.Text,
+                UnitsInStock = Convert.ToInt16(txtAdminPanelProductUpdateUnitsInStock.Text),
+                UnitPrice = Convert.ToDecimal(txtAdminPanelProductUpdateUnitPrice.Text),
+                CategoryId = Convert.ToInt32(txtAdminPanelProductUpdateCategoryId.Text)
+            });
+            MessageBox.Show("Product Updated");
+        }
+
+        private void btnAdminPanelProductUpdateClear_Click(object sender, EventArgs e)
+        {
+            txtAdminPanelProductUpdateCategoryId.Text = "";
+            txtAdminPanelProductUpdateUnitPrice.Text = "";
+            txtAdminPanelProductUpdateUnitsInStock.Text = "";
+            txtAdminPanelProductUpdateProductId.Text = "";
+            txtAdminPanelProductUpdateProductName.Text = "";
         }
     }
 }

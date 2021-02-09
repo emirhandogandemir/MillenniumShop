@@ -80,15 +80,12 @@ namespace FormUI
 
         private void btnCustomerClear_Click(object sender, EventArgs e)
         {
-
-            // foreach (Control item in this.Controls) { if (item is TextBox) { TextBox tbox = (TextBox)item; tbox.Clear(); } }
-
-
-           // foreach (Control c in this.Controls) { if (c is TextBox) { ((TextBox)c).Clear(); } if (c.Controls.Count > 0) { ClearAll(c); } }
-
-
-
-
+            txtCustomerName.Text = "";
+            txtCustomerSurname.Text = "";
+            txtCustomerCity.Text = "";
+            txtCustomerEmail.Text = "";
+            txtCustomerPassword.Text = "";
+            txtCustomerAgainPassword.Text = "";
 
 
         }
@@ -126,7 +123,13 @@ namespace FormUI
 
         private void btnManagerClear_Click(object sender, EventArgs e)
         {
-
+            txtManagerName.Text = "";
+            txtManagerEmail.Text = "";
+            txtManagerSurname.Text = "";
+            txtManagerCity.Text = "";
+            txtManagerPassword.Text = "";
+            txtManagerAgainPassword.Text = "";
+            txtManagerCode.Text = "";
         }
     }
 

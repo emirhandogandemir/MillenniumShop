@@ -43,35 +43,45 @@ namespace FormUI
             this.lblProductAddUnitsInStock = new MaterialSkin.Controls.MaterialLabel();
             this.lblProductAddName = new MaterialSkin.Controls.MaterialLabel();
             this.AdminPanelProductUpdate = new System.Windows.Forms.TabPage();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.blAdminPanelProducUpdateProductName = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAdminPanelProductUpdateCategoryId = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAdminPanelProductUpdateUnitPrice = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAdminPanelProductUpdateUnitsInStock = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAdminPanelProductUpdateProductName = new MaterialSkin.Controls.MaterialLabel();
             this.AdminPanelProductDelete = new System.Windows.Forms.TabPage();
             this.tabPage4AdminPanelProductDetails = new System.Windows.Forms.TabPage();
             this.lblAdminPanelProductDetail = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dataGridWievProductDetails = new System.Windows.Forms.DataGridView();
             this.AdminPanelUnitsInStock = new System.Windows.Forms.TabPage();
+            this.btnAdminPanelUnitsInStockShow = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dataGridViewUnitsInStock = new System.Windows.Forms.DataGridView();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblAdminPanelWelcome = new MaterialSkin.Controls.MaterialLabel();
-            this.lblMessageAdded = new MaterialSkin.Controls.MaterialLabel();
-            this.dataGridViewUnitsInStock = new System.Windows.Forms.DataGridView();
             this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            this.btnAdminPanelUnitsInStockShow = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAdminPanelProductDelete = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtBoxAdminPanelProductDelete = new System.Windows.Forms.TextBox();
+            this.lblAdminPanelDelete = new MaterialSkin.Controls.MaterialLabel();
+            this.txtAdminPanelProductUpdateProductId = new System.Windows.Forms.TextBox();
+            this.txtAdminPanelProductUpdateProductName = new System.Windows.Forms.TextBox();
+            this.txtAdminPanelProductUpdateUnitsInStock = new System.Windows.Forms.TextBox();
+            this.txtAdminPanelProductUpdateUnitPrice = new System.Windows.Forms.TextBox();
+            this.txtAdminPanelProductUpdateCategoryId = new System.Windows.Forms.TextBox();
+            this.btnAdminPanelProductUpdateClear = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAdminPanelProductUpdateUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.AdminPanelProductAdd.SuspendLayout();
             this.AdminPanelProductUpdate.SuspendLayout();
+            this.AdminPanelProductDelete.SuspendLayout();
             this.tabPage4AdminPanelProductDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridWievProductDetails)).BeginInit();
             this.AdminPanelUnitsInStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnitsInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnitsInStock)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -120,6 +130,7 @@ namespace FormUI
             this.lblAdminPanelProductAddClear.TabIndex = 9;
             this.lblAdminPanelProductAddClear.Text = "CLEAR";
             this.lblAdminPanelProductAddClear.UseVisualStyleBackColor = true;
+            this.lblAdminPanelProductAddClear.Click += new System.EventHandler(this.lblAdminPanelProductAddClear_Click);
             // 
             // btnProductAdd
             // 
@@ -216,11 +227,18 @@ namespace FormUI
             // 
             // AdminPanelProductUpdate
             // 
-            this.AdminPanelProductUpdate.Controls.Add(this.materialLabel5);
-            this.AdminPanelProductUpdate.Controls.Add(this.materialLabel1);
-            this.AdminPanelProductUpdate.Controls.Add(this.materialLabel2);
-            this.AdminPanelProductUpdate.Controls.Add(this.materialLabel3);
-            this.AdminPanelProductUpdate.Controls.Add(this.materialLabel4);
+            this.AdminPanelProductUpdate.Controls.Add(this.btnAdminPanelProductUpdateUpdate);
+            this.AdminPanelProductUpdate.Controls.Add(this.btnAdminPanelProductUpdateClear);
+            this.AdminPanelProductUpdate.Controls.Add(this.txtAdminPanelProductUpdateCategoryId);
+            this.AdminPanelProductUpdate.Controls.Add(this.txtAdminPanelProductUpdateUnitPrice);
+            this.AdminPanelProductUpdate.Controls.Add(this.txtAdminPanelProductUpdateUnitsInStock);
+            this.AdminPanelProductUpdate.Controls.Add(this.txtAdminPanelProductUpdateProductName);
+            this.AdminPanelProductUpdate.Controls.Add(this.txtAdminPanelProductUpdateProductId);
+            this.AdminPanelProductUpdate.Controls.Add(this.blAdminPanelProducUpdateProductName);
+            this.AdminPanelProductUpdate.Controls.Add(this.lblAdminPanelProductUpdateCategoryId);
+            this.AdminPanelProductUpdate.Controls.Add(this.lblAdminPanelProductUpdateUnitPrice);
+            this.AdminPanelProductUpdate.Controls.Add(this.lblAdminPanelProductUpdateUnitsInStock);
+            this.AdminPanelProductUpdate.Controls.Add(this.lblAdminPanelProductUpdateProductName);
             this.AdminPanelProductUpdate.Location = new System.Drawing.Point(4, 22);
             this.AdminPanelProductUpdate.Name = "AdminPanelProductUpdate";
             this.AdminPanelProductUpdate.Padding = new System.Windows.Forms.Padding(3);
@@ -229,73 +247,76 @@ namespace FormUI
             this.AdminPanelProductUpdate.Text = "Product Update";
             this.AdminPanelProductUpdate.UseVisualStyleBackColor = true;
             // 
-            // materialLabel5
+            // blAdminPanelProducUpdateProductName
             // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(19, 20);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(101, 19);
-            this.materialLabel5.TabIndex = 8;
-            this.materialLabel5.Text = "ProductName";
+            this.blAdminPanelProducUpdateProductName.AutoSize = true;
+            this.blAdminPanelProducUpdateProductName.Depth = 0;
+            this.blAdminPanelProducUpdateProductName.Font = new System.Drawing.Font("Roboto", 11F);
+            this.blAdminPanelProducUpdateProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.blAdminPanelProducUpdateProductName.Location = new System.Drawing.Point(19, 20);
+            this.blAdminPanelProducUpdateProductName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.blAdminPanelProducUpdateProductName.Name = "blAdminPanelProducUpdateProductName";
+            this.blAdminPanelProducUpdateProductName.Size = new System.Drawing.Size(73, 19);
+            this.blAdminPanelProducUpdateProductName.TabIndex = 8;
+            this.blAdminPanelProducUpdateProductName.Text = "ProductId";
             // 
-            // materialLabel1
+            // lblAdminPanelProductUpdateCategoryId
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(19, 193);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
-            this.materialLabel1.TabIndex = 7;
-            this.materialLabel1.Text = "CategoryNo";
+            this.lblAdminPanelProductUpdateCategoryId.AutoSize = true;
+            this.lblAdminPanelProductUpdateCategoryId.Depth = 0;
+            this.lblAdminPanelProductUpdateCategoryId.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminPanelProductUpdateCategoryId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminPanelProductUpdateCategoryId.Location = new System.Drawing.Point(19, 173);
+            this.lblAdminPanelProductUpdateCategoryId.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminPanelProductUpdateCategoryId.Name = "lblAdminPanelProductUpdateCategoryId";
+            this.lblAdminPanelProductUpdateCategoryId.Size = new System.Drawing.Size(89, 19);
+            this.lblAdminPanelProductUpdateCategoryId.TabIndex = 7;
+            this.lblAdminPanelProductUpdateCategoryId.Text = "CategoryNo";
             // 
-            // materialLabel2
+            // lblAdminPanelProductUpdateUnitPrice
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(19, 145);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(70, 19);
-            this.materialLabel2.TabIndex = 6;
-            this.materialLabel2.Text = "UnitPrice";
+            this.lblAdminPanelProductUpdateUnitPrice.AutoSize = true;
+            this.lblAdminPanelProductUpdateUnitPrice.Depth = 0;
+            this.lblAdminPanelProductUpdateUnitPrice.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminPanelProductUpdateUnitPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminPanelProductUpdateUnitPrice.Location = new System.Drawing.Point(19, 138);
+            this.lblAdminPanelProductUpdateUnitPrice.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminPanelProductUpdateUnitPrice.Name = "lblAdminPanelProductUpdateUnitPrice";
+            this.lblAdminPanelProductUpdateUnitPrice.Size = new System.Drawing.Size(70, 19);
+            this.lblAdminPanelProductUpdateUnitPrice.TabIndex = 6;
+            this.lblAdminPanelProductUpdateUnitPrice.Text = "UnitPrice";
             // 
-            // materialLabel3
+            // lblAdminPanelProductUpdateUnitsInStock
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(19, 103);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(95, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "UnitsInStock";
+            this.lblAdminPanelProductUpdateUnitsInStock.AutoSize = true;
+            this.lblAdminPanelProductUpdateUnitsInStock.Depth = 0;
+            this.lblAdminPanelProductUpdateUnitsInStock.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminPanelProductUpdateUnitsInStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminPanelProductUpdateUnitsInStock.Location = new System.Drawing.Point(19, 103);
+            this.lblAdminPanelProductUpdateUnitsInStock.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminPanelProductUpdateUnitsInStock.Name = "lblAdminPanelProductUpdateUnitsInStock";
+            this.lblAdminPanelProductUpdateUnitsInStock.Size = new System.Drawing.Size(95, 19);
+            this.lblAdminPanelProductUpdateUnitsInStock.TabIndex = 5;
+            this.lblAdminPanelProductUpdateUnitsInStock.Text = "UnitsInStock";
             // 
-            // materialLabel4
+            // lblAdminPanelProductUpdateProductName
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(19, 61);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(101, 19);
-            this.materialLabel4.TabIndex = 4;
-            this.materialLabel4.Text = "ProductName";
+            this.lblAdminPanelProductUpdateProductName.AutoSize = true;
+            this.lblAdminPanelProductUpdateProductName.Depth = 0;
+            this.lblAdminPanelProductUpdateProductName.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminPanelProductUpdateProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminPanelProductUpdateProductName.Location = new System.Drawing.Point(19, 61);
+            this.lblAdminPanelProductUpdateProductName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminPanelProductUpdateProductName.Name = "lblAdminPanelProductUpdateProductName";
+            this.lblAdminPanelProductUpdateProductName.Size = new System.Drawing.Size(101, 19);
+            this.lblAdminPanelProductUpdateProductName.TabIndex = 4;
+            this.lblAdminPanelProductUpdateProductName.Text = "ProductName";
             // 
             // AdminPanelProductDelete
             // 
+            this.AdminPanelProductDelete.Controls.Add(this.lblAdminPanelDelete);
+            this.AdminPanelProductDelete.Controls.Add(this.txtBoxAdminPanelProductDelete);
+            this.AdminPanelProductDelete.Controls.Add(this.btnAdminPanelProductDelete);
             this.AdminPanelProductDelete.Location = new System.Drawing.Point(4, 22);
             this.AdminPanelProductDelete.Name = "AdminPanelProductDelete";
             this.AdminPanelProductDelete.Padding = new System.Windows.Forms.Padding(3);
@@ -350,6 +371,27 @@ namespace FormUI
             this.AdminPanelUnitsInStock.Text = "UnitsInStock";
             this.AdminPanelUnitsInStock.UseVisualStyleBackColor = true;
             // 
+            // btnAdminPanelUnitsInStockShow
+            // 
+            this.btnAdminPanelUnitsInStockShow.Depth = 0;
+            this.btnAdminPanelUnitsInStockShow.Location = new System.Drawing.Point(267, 21);
+            this.btnAdminPanelUnitsInStockShow.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdminPanelUnitsInStockShow.Name = "btnAdminPanelUnitsInStockShow";
+            this.btnAdminPanelUnitsInStockShow.Primary = true;
+            this.btnAdminPanelUnitsInStockShow.Size = new System.Drawing.Size(100, 26);
+            this.btnAdminPanelUnitsInStockShow.TabIndex = 9;
+            this.btnAdminPanelUnitsInStockShow.Text = "Show Stock";
+            this.btnAdminPanelUnitsInStockShow.UseVisualStyleBackColor = true;
+            this.btnAdminPanelUnitsInStockShow.Click += new System.EventHandler(this.btnAdminPanelUnitsInStockShow_Click);
+            // 
+            // dataGridViewUnitsInStock
+            // 
+            this.dataGridViewUnitsInStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUnitsInStock.Location = new System.Drawing.Point(3, 0);
+            this.dataGridViewUnitsInStock.Name = "dataGridViewUnitsInStock";
+            this.dataGridViewUnitsInStock.Size = new System.Drawing.Size(239, 259);
+            this.dataGridViewUnitsInStock.TabIndex = 0;
+            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
@@ -403,38 +445,99 @@ namespace FormUI
             this.lblAdminPanelWelcome.TabIndex = 5;
             this.lblAdminPanelWelcome.Text = "Millennium Admin Paneline Hoşgeldiniz";
             // 
-            // lblMessageAdded
+            // btnAdminPanelProductDelete
             // 
-            this.lblMessageAdded.AutoSize = true;
-            this.lblMessageAdded.Depth = 0;
-            this.lblMessageAdded.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblMessageAdded.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMessageAdded.Location = new System.Drawing.Point(450, 331);
-            this.lblMessageAdded.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblMessageAdded.Name = "lblMessageAdded";
-            this.lblMessageAdded.Size = new System.Drawing.Size(0, 19);
-            this.lblMessageAdded.TabIndex = 6;
+            this.btnAdminPanelProductDelete.Depth = 0;
+            this.btnAdminPanelProductDelete.Location = new System.Drawing.Point(95, 199);
+            this.btnAdminPanelProductDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdminPanelProductDelete.Name = "btnAdminPanelProductDelete";
+            this.btnAdminPanelProductDelete.Primary = true;
+            this.btnAdminPanelProductDelete.Size = new System.Drawing.Size(100, 26);
+            this.btnAdminPanelProductDelete.TabIndex = 9;
+            this.btnAdminPanelProductDelete.Text = "DELETE";
+            this.btnAdminPanelProductDelete.UseVisualStyleBackColor = true;
+            this.btnAdminPanelProductDelete.Click += new System.EventHandler(this.btnAdminPanelProductDelete_Click);
             // 
-            // dataGridViewUnitsInStock
+            // txtBoxAdminPanelProductDelete
             // 
-            this.dataGridViewUnitsInStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUnitsInStock.Location = new System.Drawing.Point(3, 0);
-            this.dataGridViewUnitsInStock.Name = "dataGridViewUnitsInStock";
-            this.dataGridViewUnitsInStock.Size = new System.Drawing.Size(239, 259);
-            this.dataGridViewUnitsInStock.TabIndex = 0;
+            this.txtBoxAdminPanelProductDelete.Location = new System.Drawing.Point(132, 41);
+            this.txtBoxAdminPanelProductDelete.Name = "txtBoxAdminPanelProductDelete";
+            this.txtBoxAdminPanelProductDelete.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxAdminPanelProductDelete.TabIndex = 10;
             // 
-            // btnAdminPanelUnitsInStockShow
+            // lblAdminPanelDelete
             // 
-            this.btnAdminPanelUnitsInStockShow.Depth = 0;
-            this.btnAdminPanelUnitsInStockShow.Location = new System.Drawing.Point(267, 21);
-            this.btnAdminPanelUnitsInStockShow.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAdminPanelUnitsInStockShow.Name = "btnAdminPanelUnitsInStockShow";
-            this.btnAdminPanelUnitsInStockShow.Primary = true;
-            this.btnAdminPanelUnitsInStockShow.Size = new System.Drawing.Size(100, 26);
-            this.btnAdminPanelUnitsInStockShow.TabIndex = 9;
-            this.btnAdminPanelUnitsInStockShow.Text = "Show Stock";
-            this.btnAdminPanelUnitsInStockShow.UseVisualStyleBackColor = true;
-            this.btnAdminPanelUnitsInStockShow.Click += new System.EventHandler(this.btnAdminPanelUnitsInStockShow_Click);
+            this.lblAdminPanelDelete.AutoSize = true;
+            this.lblAdminPanelDelete.Depth = 0;
+            this.lblAdminPanelDelete.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdminPanelDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdminPanelDelete.Location = new System.Drawing.Point(29, 42);
+            this.lblAdminPanelDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdminPanelDelete.Name = "lblAdminPanelDelete";
+            this.lblAdminPanelDelete.Size = new System.Drawing.Size(77, 19);
+            this.lblAdminPanelDelete.TabIndex = 11;
+            this.lblAdminPanelDelete.Text = "Product Id";
+            // 
+            // txtAdminPanelProductUpdateProductId
+            // 
+            this.txtAdminPanelProductUpdateProductId.Location = new System.Drawing.Point(161, 20);
+            this.txtAdminPanelProductUpdateProductId.Name = "txtAdminPanelProductUpdateProductId";
+            this.txtAdminPanelProductUpdateProductId.Size = new System.Drawing.Size(100, 20);
+            this.txtAdminPanelProductUpdateProductId.TabIndex = 9;
+            // 
+            // txtAdminPanelProductUpdateProductName
+            // 
+            this.txtAdminPanelProductUpdateProductName.Location = new System.Drawing.Point(161, 61);
+            this.txtAdminPanelProductUpdateProductName.Name = "txtAdminPanelProductUpdateProductName";
+            this.txtAdminPanelProductUpdateProductName.Size = new System.Drawing.Size(100, 20);
+            this.txtAdminPanelProductUpdateProductName.TabIndex = 10;
+            // 
+            // txtAdminPanelProductUpdateUnitsInStock
+            // 
+            this.txtAdminPanelProductUpdateUnitsInStock.Location = new System.Drawing.Point(161, 102);
+            this.txtAdminPanelProductUpdateUnitsInStock.Name = "txtAdminPanelProductUpdateUnitsInStock";
+            this.txtAdminPanelProductUpdateUnitsInStock.Size = new System.Drawing.Size(100, 20);
+            this.txtAdminPanelProductUpdateUnitsInStock.TabIndex = 11;
+            // 
+            // txtAdminPanelProductUpdateUnitPrice
+            // 
+            this.txtAdminPanelProductUpdateUnitPrice.Location = new System.Drawing.Point(161, 137);
+            this.txtAdminPanelProductUpdateUnitPrice.Name = "txtAdminPanelProductUpdateUnitPrice";
+            this.txtAdminPanelProductUpdateUnitPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtAdminPanelProductUpdateUnitPrice.TabIndex = 12;
+            // 
+            // txtAdminPanelProductUpdateCategoryId
+            // 
+            this.txtAdminPanelProductUpdateCategoryId.Location = new System.Drawing.Point(161, 172);
+            this.txtAdminPanelProductUpdateCategoryId.Name = "txtAdminPanelProductUpdateCategoryId";
+            this.txtAdminPanelProductUpdateCategoryId.Size = new System.Drawing.Size(100, 20);
+            this.txtAdminPanelProductUpdateCategoryId.TabIndex = 13;
+            // 
+            // btnAdminPanelProductUpdateClear
+            // 
+            this.btnAdminPanelProductUpdateClear.Depth = 0;
+            this.btnAdminPanelProductUpdateClear.Location = new System.Drawing.Point(225, 218);
+            this.btnAdminPanelProductUpdateClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdminPanelProductUpdateClear.Name = "btnAdminPanelProductUpdateClear";
+            this.btnAdminPanelProductUpdateClear.Primary = true;
+            this.btnAdminPanelProductUpdateClear.Size = new System.Drawing.Size(100, 26);
+            this.btnAdminPanelProductUpdateClear.TabIndex = 14;
+            this.btnAdminPanelProductUpdateClear.Text = "CLEAR";
+            this.btnAdminPanelProductUpdateClear.UseVisualStyleBackColor = true;
+            this.btnAdminPanelProductUpdateClear.Click += new System.EventHandler(this.btnAdminPanelProductUpdateClear_Click);
+            // 
+            // btnAdminPanelProductUpdateUpdate
+            // 
+            this.btnAdminPanelProductUpdateUpdate.Depth = 0;
+            this.btnAdminPanelProductUpdateUpdate.Location = new System.Drawing.Point(95, 218);
+            this.btnAdminPanelProductUpdateUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdminPanelProductUpdateUpdate.Name = "btnAdminPanelProductUpdateUpdate";
+            this.btnAdminPanelProductUpdateUpdate.Primary = true;
+            this.btnAdminPanelProductUpdateUpdate.Size = new System.Drawing.Size(100, 26);
+            this.btnAdminPanelProductUpdateUpdate.TabIndex = 15;
+            this.btnAdminPanelProductUpdateUpdate.Text = "UPDATE";
+            this.btnAdminPanelProductUpdateUpdate.UseVisualStyleBackColor = true;
+            this.btnAdminPanelProductUpdateUpdate.Click += new System.EventHandler(this.btnAdminPanelProductUpdateUpdate_Click);
             // 
             // ManagerForm
             // 
@@ -442,7 +545,6 @@ namespace FormUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(704, 399);
-            this.Controls.Add(this.lblMessageAdded);
             this.Controls.Add(this.lblAdminPanelWelcome);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -457,13 +559,15 @@ namespace FormUI
             this.AdminPanelProductAdd.PerformLayout();
             this.AdminPanelProductUpdate.ResumeLayout(false);
             this.AdminPanelProductUpdate.PerformLayout();
+            this.AdminPanelProductDelete.ResumeLayout(false);
+            this.AdminPanelProductDelete.PerformLayout();
             this.tabPage4AdminPanelProductDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridWievProductDetails)).EndInit();
             this.AdminPanelUnitsInStock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnitsInStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnitsInStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,17 +595,26 @@ namespace FormUI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MaterialSkin.Controls.MaterialLabel lblAdminPanelWelcome;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialLabel lblMessageAdded;
+        private MaterialSkin.Controls.MaterialLabel blAdminPanelProducUpdateProductName;
+        private MaterialSkin.Controls.MaterialLabel lblAdminPanelProductUpdateCategoryId;
+        private MaterialSkin.Controls.MaterialLabel lblAdminPanelProductUpdateUnitPrice;
+        private MaterialSkin.Controls.MaterialLabel lblAdminPanelProductUpdateUnitsInStock;
+        private MaterialSkin.Controls.MaterialLabel lblAdminPanelProductUpdateProductName;
         private MaterialSkin.Controls.MaterialRaisedButton lblAdminPanelProductAddClear;
         private MaterialSkin.Controls.MaterialRaisedButton lblAdminPanelProductDetail;
         private System.Windows.Forms.DataGridView dataGridWievProductDetails;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdminPanelUnitsInStockShow;
         private System.Windows.Forms.DataGridView dataGridViewUnitsInStock;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
+        private MaterialSkin.Controls.MaterialLabel lblAdminPanelDelete;
+        private System.Windows.Forms.TextBox txtBoxAdminPanelProductDelete;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAdminPanelProductDelete;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAdminPanelProductUpdateUpdate;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAdminPanelProductUpdateClear;
+        private System.Windows.Forms.TextBox txtAdminPanelProductUpdateCategoryId;
+        private System.Windows.Forms.TextBox txtAdminPanelProductUpdateUnitPrice;
+        private System.Windows.Forms.TextBox txtAdminPanelProductUpdateUnitsInStock;
+        private System.Windows.Forms.TextBox txtAdminPanelProductUpdateProductName;
+        private System.Windows.Forms.TextBox txtAdminPanelProductUpdateProductId;
     }
 }
